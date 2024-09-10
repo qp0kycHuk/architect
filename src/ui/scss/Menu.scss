@@ -1,0 +1,126 @@
+c-menu-items {
+  position  : absolute;
+  z-index   : theme('zIndex.1');
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
+  border    : 1px solid theme('colors.default / 5%');
+
+
+  &:not(.active) {
+    pointer-events: none;
+    opacity       : 0;
+
+    @apply scale-95;
+
+    @media (max-width:theme('screens.md')) {
+      transform: translateY(20px);
+    }
+  }
+}
+
+.c-menu-items {
+  position  : absolute;
+  z-index   : theme('zIndex.1');
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
+  border    : 1px solid theme('colors.default / 5%');
+
+
+  &:not(.active) {
+    pointer-events: none;
+    opacity       : 0;
+
+    @apply scale-95;
+
+    @media (max-width:theme('screens.md')) {
+      transform: translateY(20px);
+    }
+  }
+
+  @media (min-width:theme('screens.md')) {
+    &-top {
+      @apply left-1/2 -translate-x-1/2 bottom-full mb-2 origin-bottom
+    }
+
+    &-top-start {
+      @apply left-0 bottom-full mb-2 origin-bottom-left
+    }
+
+    &-top-end {
+      @apply right-0 bottom-full mb-2 origin-bottom-right
+    }
+
+    &-bottom {
+      @apply left-1/2 -translate-x-1/2 top-full mt-2 origin-top
+    }
+
+    &-bottom-start {
+      @apply left-0 top-full mt-2 origin-top-left
+    }
+
+    &-bottom-end {
+      @apply right-0 top-full mt-2 origin-top-right
+    }
+
+    &-right {
+      @apply top-1/2 -translate-y-1/2 left-full ml-2 origin-left
+    }
+
+    &-right-start {
+      @apply top-0 left-full ml-2 origin-top-left
+    }
+
+    &-right-end {
+      @apply bottom-0 left-full ml-2 origin-bottom-left
+    }
+
+    &-left {
+      @apply top-1/2 -translate-y-1/2 right-full mr-2 origin-right
+    }
+
+    &-left-start {
+      @apply top-0 right-full mr-2 origin-top-right
+    }
+
+    &-left-end {
+      @apply bottom-0 right-full mr-2 origin-bottom-right
+    }
+  }
+
+  @media (max-width:theme('screens.md')) {
+    position  : fixed;
+    bottom    : 0;
+    left      : 0;
+    width     : 100%;
+    height    : auto;
+    z-index   : theme('zIndex.4');
+    max-height: 400px;
+    overflow  : auto;
+  }
+
+}
+
+body.c-menu-opened {
+  @media (max-width:theme('screens.md')) {
+    overflow: hidden;
+  }
+}
+
+.c-menu {
+  &-shadow {
+    position  : fixed;
+    z-index   : calc(theme('zIndex.4') - 1);
+    inset     : 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: .25s ease;
+
+    @media (min-width:theme('screens.md')) {
+      display: none;
+    }
+
+    &:not(.active) {
+      pointer-events: none;
+      opacity       : 0;
+
+    }
+  }
+
+}
