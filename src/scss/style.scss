@@ -101,6 +101,9 @@ body {
     }
 
     @media(hover) {
+      // temp
+
+      &-wrapper:hover &::before,
       &:hover::before {
         transform: scaleX(1);
       }
@@ -832,6 +835,22 @@ body {
   }
 }
 
+.cert {
+  &-pagination {
+    --swiper-pagination-bullet-size            : 12px;
+    --swiper-pagination-bullet-horizontal-gap  : 18px;
+    --swiper-pagination-color                  : theme('colors.primary');
+    --swiper-pagination-bullet-inactive-color  : var(--swiper-pagination-color);
+    --swiper-pagination-bullet-inactive-opacity: .6;
+
+    @media (max-width: theme('screens.sm')) {
+      --swiper-pagination-bullet-size          : 8px;
+      --swiper-pagination-bullet-horizontal-gap: 8px;
+
+    }
+  }
+}
+
 .description {
   &::before {
     border-left: 1px solid theme('colors.default / 15%');
@@ -872,16 +891,16 @@ body {
     flex-direction: column;
     align-items   : center;
     text-align    : center;
-    gap           : 40px;
-    padding-top   : 72px;
-    padding-bottom: 48px;
+    gap           : 20px;
+    padding-top   : 48px;
+    padding-bottom: 20px;
     border        : 1px solid theme('colors.default / 10%');
     position      : relative;
 
     @media (max-width: theme('screens.lg')) {
       flex-direction: row;
       text-align    : left;
-      padding       : 32px 24px;
+      padding       : 20px 24px;
     }
 
     &-icon {
@@ -990,6 +1009,16 @@ body {
   }
 }
 
+.dialog-vacancy {
+  width  : 972px;
+  padding: 48px 40px;
+
+  @media (max-width: theme('screens.sm')) {
+    padding-left : 15px;
+    padding-right: 15px;
+  }
+}
+
 .map {
   height: 600px;
 }
@@ -997,4 +1026,62 @@ body {
 [data-animation] {
   opacity: 0;
 
+}
+
+.pray {
+  background: linear-gradient(104.89deg, #2E8F86 0%, #7BAFAA 60.5%), #7BAFAA;
+
+  @media (max-width: theme('screens.sm')) {
+    background : none;
+    padding-top: 16px;
+  }
+
+  &-block {
+    background     : theme('colors.l3');
+    padding        : 16px;
+    padding-left   : 40px;
+    display        : flex;
+    gap            : 32px;
+    justify-content: space-between;
+
+    @media (max-width: theme('screens.lg')) {
+      flex-direction: column;
+      padding       : 16px;
+    }
+
+    @media (max-width: theme('screens.sm')) {
+      padding: 0;
+    }
+
+  }
+
+  &-form {
+    padding-top   : 40px;
+    padding-bottom: 40px;
+
+    @media (max-width: theme('screens.lg')) {
+      padding: 0;
+    }
+  }
+
+  &-image {
+    width      : 678px;
+    flex-shrink: 0;
+
+    @media (max-width: theme('screens.lg')) {
+      width: 100%;
+      order: -1;
+    }
+  }
+}
+
+.dialog-info {
+  width: 320px;
+
+  &-image {
+    height  : 172px;
+    display : flex;
+    position: relative;
+
+  }
 }

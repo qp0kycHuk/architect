@@ -907,35 +907,179 @@
   })
 </script>
 
+<!-- Сертификаты и лицензии -->
+<section class="cert p-section overflow-hidden bg-l2" id="cert">
+  <div class="title mb-5 sm:mb-10">
+    Сертификаты и лицензии
+  </div>
+  <div class="mb-12 max-sm:text-sm">
+    Сертификаты и лицензии нужны для подтверждения соответствия продукции, работ, услуг и процессов установленным нормам и требованиям, они обеспечивают: повышение доверия к бренду и улучшение репутации, возможность участвовать в госзакупках и коммерческих тендерах, защиту рынка от недобросовестных лиц и опасных продуктов.
+  </div>
+
+  <div class="cert-slider relative" data-animation="fadeInUp">
+    <div class="swiper -mx-2 sm:-mx-4.5 max-lg:overflow-visible">
+      <div class="swiper-wrapper">
+        <% for(let i = 0; i < 10; i++) { %>
+
+        <div class="swiper-slide px-2 sm:px-4.5 w-11/12 xs:w-10/12 lg:w-1/3">
+          <a href="img/test.jpg" data-fancybox="cert" class="cert-item relative">
+            <div class="ratio ratio-[390/552]">
+              <img src="img/test.jpg" alt="" class="absolute-fit object-cover">
+            </div>
+          </a>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+
+    <div class="absolute right-full mr-6 z-[2] top-1/2 -translate-y-1/2 max-xl:hidden">
+      <button class="btn btn-icon btn-primary btn-contur md:btn-xl rounded-full cert-slider-prev">
+        <c-icon class="icon text-xl md:text-3.5xl " href="img/icons.svg#arrow-left-alt"></c-icon>
+      </button>
+    </div>
+
+    <div class="absolute left-full ml-6 z-[2] top-1/2 -translate-y-1/2 max-xl:hidden">
+      <button class="btn btn-icon btn-primary btn-contur md:btn-xl rounded-full cert-slider-next">
+        <c-icon class="icon text-xl md:text-3.5xl " href="img/icons.svg#arrow-right-alt"></c-icon>
+      </button>
+    </div>
+  </div>
+  <div class="relative mt-14" data-animation="fadeInUp">
+    <div class="cert-pagination absolute"></div>
+  </div>
+</section>
+<script>
+  new Swiper('.cert-slider>.swiper', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    breakpoints: {
+      [1199.98]: {
+        centeredSlides: false,
+
+      }
+    },
+    navigation: {
+      prevEl: '.cert-slider-prev',
+      nextEl: '.cert-slider-next',
+    },
+    pagination: {
+      el: '.cert-pagination',
+      dynamicBullets: true,
+      clickable: true
+    }
+  })
+</script>
+
+<!-- Вакансии -->
+<section class="vacancy p-section" id="vacancy">
+  <div class="title mb-5 sm:mb-10">
+    Вакансии
+  </div>
+  <div class="grid lg:grid-cols-3 gap-4 lg:gap-7">
+    <% for(let i = 0; i < 6; i++) { %>
+    <div class="vacancy-item border border-default/10">
+      <div class="flex items-center gap-5 p-4 sm:p-6">
+        <div class="size-16 shrink-0 flex bg-primary rounded-full">
+          <c-icon class="icon m-auto text-white text-3.5xl" href="img/icons.svg#user"></c-icon>
+        </div>
+        <div class="text-lg sm:text-2xl font-alt">
+          Главный архитектор
+          проекта / ГАП
+        </div>
+      </div>
+      <div class="border-t border-default/10 border-dashed"></div>
+      <div class="p-4 sm:p-6">
+        <button class="btn btn-default btn-contur rounded-full px-6 gap-1">
+          <span class="font-alt">Подробнее</span>
+          <c-icon class="icon text-xl" href="img/icons.svg#arrow-right"></c-icon>
+        </button>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+</section>
+
 <!-- Контакты -->
 <section class="contact p-section" id="contact">
   <div class="title mb-8 sm:mb-10" data-animation="fadeInUp">Контакты</div>
 
-  <div class="grid lg:grid-cols-3 gap-3 sm:gap-7 items-start  flex-col">
-    <a href="javascript:;" class="contact-item hover-underline" data-animation="fadeInUp">
-      <div class="pointer-events-none absolute inset-2 border-default/10 border border-t-dashed border-b-dashed"></div>
-      <div class="contact-item-icon">
-        <c-icon class="icon" href="img/icons.svg#phone"></c-icon>
-      </div>
-      <div class="text-lg sm:text-2xl font-alt">8 918 000 00 00</div>
-    </a>
+  <div class="grid lg:grid-cols-3 gap-3 sm:gap-7 flex-col">
     <a href="javascript:;" class="contact-item hover-underline" data-animation="fadeInUp" data-scroll="#contact-map">
       <div class="pointer-events-none absolute inset-2 border-default/10 border border-l-dashed border-t-dashed"></div>
       <div class="contact-item-icon">
         <c-icon class="icon" href="img/icons.svg#building"></c-icon>
       </div>
-      <div class="text-lg sm:text-2xl font-alt">
-        ст-ца Динская, <br>
-        Красноармейская ул., 29А
+      <div>
+        <div class="opacity-60">Наш адрес</div>
+        <div class="text-lg sm:text-2xl font-alt">
+          ст-ца Динская, <br>
+          Красноармейская ул., 29А
+        </div>
       </div>
     </a>
+    <div class="contact-item " data-animation="fadeInUp">
+      <div class="pointer-events-none absolute inset-2 border-default/10 border border-t-dashed border-b-dashed"></div>
+      <div class="contact-item-icon">
+        <c-icon class="icon" href="img/icons.svg#phone"></c-icon>
+      </div>
+      <div>
+        <a href="javascript:;" class="block hover-underline-wrapper">
+          <div class="opacity-60">Приёмная</div>
+          <div class="text-lg sm:text-2xl font-alt hover-underline">8 918 000 00 00</div>
+        </a>
+        <a href="javascript:;" class="block hover-underline-wrapper mt-2">
+          <div class="opacity-60">Юридический отдел</div>
+          <div class="text-lg sm:text-2xl font-alt hover-underline"> 8 903 449 11 77</div>
+        </a>
+      </div>
+    </div>
     <a href="javascript:;" class="contact-item hover-underline" data-animation="fadeInUp">
       <div class="pointer-events-none absolute inset-2 border-default/10 border border-l-dashed border-r-dashed"></div>
       <div class="contact-item-icon">
         <c-icon class="icon" href="img/icons.svg#email"></c-icon>
       </div>
-      <div class="text-lg sm:text-2xl font-alt">info@kapitel-architect.ru</div>
+      <div>
+        <div class="opacity-60">Наш e-mail</div>
+        <div class="text-lg sm:text-2xl font-alt">info@kapitel-architect.ru</div>
+      </div>
     </a>
+  </div>
+</section>
+
+<section class="pray p-section">
+  <div class="pray-block">
+    <div class="pray-form">
+      <div class="text-3.5xl font-alt">Отправить заявку</div>
+      <div class="mt-3 opacity-60">
+        Напишите номер телефона, и мы перезвоним –
+        это бесплатно!
+      </div>
+      <label class="block mt-7">
+        <div class="text-sm mb-2 font-semibold">Имя</div>
+        <input type="text" class="input rounded-lg w-full">
+      </label>
+      <label class="block mt-7">
+        <div class="text-sm mb-2 font-semibold">Телефон для связи</div>
+        <input type="tel" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _" class="input rounded-lg w-full">
+      </label>
+      <label class="block mt-7">
+        <div class="text-sm mb-2 font-semibold">Комментарий</div>
+        <textarea class="input rounded-lg w-full min-h-20 max-h-30"></textarea>
+      </label>
+      <button class="btn btn-default btn-contur px-6 gap-1 rounded-full mt-6">
+        <span class="font-alt font-medium">Отправить</span>
+      </button>
+      <div class="mt-6 text-xs opacity-40">
+        Отправляя форму, Вы даете согласие на обработку Ваших <br class="max-sm:hidden">
+        персональных данных
+      </div>
+    </div>
+    <div class="pray-image ratio ratio-1/1">
+      <img src="img/pray.jpg" alt="" class="absolute-fit object-cover">
+    </div>
   </div>
 </section>
 
@@ -951,5 +1095,9 @@
     <div class="absolute -inset-5"></div>
   </a>
 </footer>
+
+<script>
+  Fancybox.modal.open('dialog-error.html')
+</script>
 
 <%= require('./html-includes/footer.html')() %>
